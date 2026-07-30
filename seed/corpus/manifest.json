@@ -1,0 +1,86 @@
+[
+  {
+    "doc_id": "vpn-handbuch",
+    "title": "VPN-Handbuch",
+    "collection": "handbuecher",
+    "department": "all",
+    "pdf": true
+  },
+  {
+    "doc_id": "urlaubsrichtlinie",
+    "title": "Urlaubsrichtlinie",
+    "collection": "handbuecher",
+    "department": "all",
+    "pdf": true
+  },
+  {
+    "doc_id": "monitoring-runbook",
+    "title": "Monitoring-Runbook",
+    "collection": "handbuecher",
+    "department": "all",
+    "pdf": true
+  },
+  {
+    "doc_id": "onboarding-handbuch",
+    "title": "Onboarding-Handbuch",
+    "collection": "handbuecher",
+    "department": "all",
+    "pdf": true
+  },
+  {
+    "doc_id": "remote-richtlinie",
+    "title": "Richtlinie Mobiles Arbeiten",
+    "collection": "handbuecher",
+    "department": "all",
+    "pdf": true
+  },
+  {
+    "doc_id": "drucker-runbook",
+    "title": "Drucker-Runbook",
+    "collection": "handbuecher",
+    "department": "all",
+    "pdf": true
+  },
+  {
+    "doc_id": "backup-richtlinie",
+    "title": "Backup-Richtlinie",
+    "collection": "handbuecher",
+    "department": "all",
+    "pdf": true
+  },
+  {
+    "doc_id": "security-incident",
+    "title": "Security-Incident-Prozess",
+    "collection": "handbuecher",
+    "department": "all",
+    "pdf": true
+  },
+  {
+    "doc_id": "email-runbook",
+    "title": "E-Mail-Runbook",
+    "collection": "handbuecher",
+    "department": "all",
+    "pdf": true
+  },
+  {
+    "doc_id": "reisekosten",
+    "title": "Reisekostenrichtlinie",
+    "collection": "handbuecher",
+    "department": "all",
+    "pdf": true
+  },
+  {
+    "doc_id": "wartung-altsystem",
+    "title": "Wartungshinweise Altsystem",
+    "collection": "handbuecher",
+    "department": "all",
+    "pdf": true
+  },
+  {
+    "doc_id": "gehaltsbaender",
+    "title": "Gehaltsbänder",
+    "collection": "hr",
+    "department": "hr",
+    "pdf": true
+  }
+]

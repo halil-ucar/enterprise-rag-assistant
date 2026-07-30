@@ -1,0 +1,91 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: rag_owner
+      POSTGRES_PASSWORD: rag_owner_pw
+      POSTGRES_DB: rag
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      # Init scripts run once on first start, in lexical order.
+      - ./db/init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U rag_owner -d rag"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+
+  dex:
+    # Demo IdP for the A6 OIDC flow (config/dex.yaml — documented demo
+    # credentials, fictional domain). Version pinned exactly: no :latest.
+    # The api service deliberately does NOT depend on dex — the static-key
+    # default must start without it (make start stays dex-free).
+    image: dexidp/dex:v2.45.1
+    command: dex serve /etc/dex/config.yaml
+    volumes:
+      - ./config/dex.yaml:/etc/dex/config.yaml:ro
+    ports:
+      - "5556:5556"
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "-", "http://127.0.0.1:5556/dex/healthz"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+
+  api:
+    build: .
+    command: uvicorn rag_assistant.api:app --host 0.0.0.0 --port 8000
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql://rag_app:rag_app_pw@postgres:5432/rag
+      REDIS_URL: redis://redis:6379/0
+      # Ollama runs NATIVELY on the host (containers on macOS have no Metal).
+      OLLAMA_URL: http://host.docker.internal:11434
+      RUN_MODE: container
+    extra_hosts:
+      - "host.docker.internal:host-gateway"   # Linux compatibility
+    volumes:
+      # persist the embedding/reranker model downloads across restarts (~5 GB)
+      - hf_cache:/root/.cache/huggingface
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  worker:
+    build: .
+    command: arq rag_assistant.worker.WorkerSettings
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql://rag_app:rag_app_pw@postgres:5432/rag
+      REDIS_URL: redis://redis:6379/0
+      OLLAMA_URL: http://host.docker.internal:11434
+      RUN_MODE: container
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - hf_cache:/root/.cache/huggingface
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+volumes:
+  pgdata:
+  hf_cache:

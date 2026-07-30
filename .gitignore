@@ -1,0 +1,29 @@
+# secrets — never commit
+.env
+
+# python
+__pycache__/
+*.pyc
+.venv/
+dist/
+build/
+*.egg-info/
+
+# tooling caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+uv.lock.tmp
+
+# eval run artifacts (results are summarized in README, raw runs stay local)
+eval/runs/
+
+# database dumps (make backup) — operator artifacts, never in the repo
+backups/
+
+# generated haystack (deterministic — regenerate with make_fill_corpus.py) + author briefs
+seed/corpus-fill/
+seed/corpus-core/_briefs/
+
+# OS
+.DS_Store

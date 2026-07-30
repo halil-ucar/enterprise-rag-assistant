@@ -1,0 +1,15 @@
+# Declarative collection registry — tenant onboarding is a CONFIG change, not code.
+# data_class drives provider routing (policy.py): confidential ⇒ local-only, fail-closed.
+tenant: nordfels
+default_collection: handbuecher
+collections:
+  - name: handbuecher
+    data_class: internal
+    description: >
+      Runbooks, Handbücher und Ticket-Lösungen der (fiktiven) Nordfels IT GmbH.
+    embedding_version: 1
+  - name: hr
+    data_class: confidential
+    description: >
+      HR-Dokumente (fiktiv) — verlassen nie die lokale Umgebung; nur Abteilung HR.
+    embedding_version: 1

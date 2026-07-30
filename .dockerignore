@@ -1,0 +1,19 @@
+# Keep the build context small and the image deterministic.
+.git
+.github
+.venv
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.env
+eval/runs/
+seed/corpus-fill/
+seed/corpus-core/_briefs/
+tests/
+docs/
+*.md
+!README.md
+.DS_Store
+node_modules/

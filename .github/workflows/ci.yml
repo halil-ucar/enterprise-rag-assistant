@@ -1,0 +1,68 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          python-version: "3.12"
+      - name: Sync (no ML extras — unit layer runs on fakes)
+        run: uv sync
+      - name: Lint
+        run: |
+          uv run ruff check src tests eval seed
+          uv run ruff format --check src tests eval seed
+      - name: Types
+        run: uv run mypy
+      - name: Unit tests
+        run: uv run pytest
+
+  integration:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: pgvector/pgvector:pg16
+        env:
+          POSTGRES_USER: rag_owner
+          POSTGRES_PASSWORD: rag_owner_pw
+          POSTGRES_DB: rag
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U rag_owner -d rag"
+          --health-interval 3s --health-timeout 3s --health-retries 20
+      redis:
+        image: redis:7-alpine
+        ports: ["6379:6379"]
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 3s --health-timeout 3s --health-retries 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          python-version: "3.12"
+      - run: uv sync
+      - name: Apply schema (same scripts the compose init runs)
+        run: |
+          for f in db/init/*.sql; do
+            PGPASSWORD=rag_owner_pw psql -h localhost -U rag_owner -d rag -v ON_ERROR_STOP=1 -f "$f"
+          done
+      - name: Integration tests (deletion cascade, RLS, hybrid SQL — fake embedder)
+        env:
+          DATABASE_URL: postgresql://rag_app:rag_app_pw@localhost:5432/rag
+          REDIS_URL: redis://localhost:6379/0
+          EMBEDDINGS_BACKEND: fake
+          RERANKER_BACKEND: fake
+          # A4 verification reads: rag_app has no SELECT on audit_events (the
+          # proof); tests read the log through the owner role instead.
+          AUDIT_CHECK_DSN: postgresql://rag_owner:rag_owner_pw@localhost:5432/rag
+        run: uv run pytest -m integration
+      - name: Restore check (A5 — dump, throwaway restore, count compare)
+        run: PGHOST=localhost PGUSER=rag_owner PGPASSWORD=rag_owner_pw PGDATABASE=rag bash scripts/restore_check.sh

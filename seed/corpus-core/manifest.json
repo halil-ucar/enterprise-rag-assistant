@@ -1,0 +1,338 @@
+[
+  {
+    "doc_id": "core-vpn-handbuch-v3",
+    "title": "VPN-Handbuch (v3)",
+    "collection": "handbuecher",
+    "department": "all",
+    "family": "version",
+    "status": "current"
+  },
+  {
+    "doc_id": "core-vpn-handbuch-v2",
+    "title": "VPN-Handbuch (v2, abgelöst)",
+    "collection": "handbuecher",
+    "department": "all",
+    "family": "version",
+    "status": "deprecated"
+  },
+  {
+    "doc_id": "core-reisekosten-2026",
+    "title": "Reisekostenrichtlinie 2026",
+    "collection": "handbuecher",
+    "department": "all",
+    "family": "version",
+    "status": "current"
+  },
+  {
+    "doc_id": "core-reisekosten-2024",
+    "title": "Reisekostenrichtlinie 2024 (abgelöst)",
+    "collection": "handbuecher",
+    "department": "all",
+    "family": "version",
+    "status": "deprecated"
+  },
+  {
+    "doc_id": "core-passwortrichtlinie-v2",
+    "title": "Passwortrichtlinie (v2)",
+    "collection": "handbuecher",
+    "department": "all",
+    "family": "version",
+    "status": "current"
+  },
+  {
+    "doc_id": "core-passwortrichtlinie-v1",
+    "title": "Passwortrichtlinie (v1, abgelöst)",
+    "collection": "handbuecher",
+    "department": "all",
+    "family": "version",
+    "status": "deprecated"
+  },
+  {
+    "doc_id": "core-backup-2026",
+    "title": "Backup-Konzept 2026",
+    "collection": "handbuecher",
+    "department": "all",
+    "family": "version",
+    "status": "current"
+  },
+  {
+    "doc_id": "core-backup-2023",
+    "title": "Backup-Konzept 2023 (abgelöst)",
+    "collection": "handbuecher",
+    "department": "all",
+    "family": "version",
+    "status": "deprecated"
+  },
+  {
+    "doc_id": "core-softwarebestellung-2026",
+    "title": "Softwarebeschaffung 2026",
+    "collection": "handbuecher",
+    "department": "all",
+    "family": "version",
+    "status": "current"
+  },
+  {
+    "doc_id": "core-softwarebestellung-2024",
+    "title": "Softwarebeschaffung 2024 (abgelöst)",
+    "collection": "handbuecher",
+    "department": "all",
+    "family": "version",
+    "status": "deprecated"
+  },
+  {
+    "doc_id": "core-mobiles-arbeiten-hagen",
+    "title": "Mobiles Arbeiten — Standort Hagen",
+    "collection": "handbuecher",
+    "department": "all",
+    "family": "location",
+    "status": "current"
+  },
+  {
+    "doc_id": "core-mobiles-arbeiten-koeln",
+    "title": "Mobiles Arbeiten — Standort Köln",
+    "collection": "handbuecher",
+    "department": "all",
+    "family": "location",
+    "status": "current"
+  },
+  {
+    "doc_id": "core-zutritt-hagen",
+    "title": "Zutrittsordnung — Standort Hagen",
+    "collection": "handbuecher",
+    "department": "all",
+    "family": "location",
+    "status": "current"
+  },
+  {
+    "doc_id": "core-zutritt-koeln",
+    "title": "Zutrittsordnung — Standort Köln",
+    "collection": "handbuecher",
+    "department": "all",
+    "family": "location",
+    "status": "current"
+  },
+  {
+    "doc_id": "core-parken-hagen",
+    "title": "Parkordnung — Standort Hagen",
+    "collection": "handbuecher",
+    "department": "all",
+    "family": "location",
+    "status": "current"
+  },
+  {
+    "doc_id": "core-parken-koeln",
+    "title": "Parkordnung — Standort Köln",
+    "collection": "handbuecher",
+    "department": "all",
+    "family": "location",
+    "status": "current"
+  },
+  {
+    "doc_id": "core-brandschutz-hagen",
+    "title": "Brandschutzordnung — Standort Hagen",
+    "collection": "handbuecher",
+    "department": "all",
+    "family": "location",
+    "status": "current"
+  },
+  {
+    "doc_id": "core-brandschutz-koeln",
+    "title": "Brandschutzordnung — Standort Köln",
+    "collection": "handbuecher",
+    "department": "all",
+    "family": "location",
+    "status": "current"
+  },
+  {
+    "doc_id": "core-runbook-nf-mail-01",
+    "title": "Runbook NF-MAIL-01 (Mailserver)",
+    "collection": "handbuecher",
+    "department": "all",
+    "family": "system",
+    "status": "current"
+  },
+  {
+    "doc_id": "core-runbook-nf-mail-archiv",
+    "title": "Runbook NF-MAIL-ARCHIV (Archivsystem)",
+    "collection": "handbuecher",
+    "department": "all",
+    "family": "system",
+    "status": "current"
+  },
+  {
+    "doc_id": "core-drucker-lj70",
+    "title": "Drucker-Runbook LabelJet LJ-70",
+    "collection": "handbuecher",
+    "department": "all",
+    "family": "system",
+    "status": "current"
+  },
+  {
+    "doc_id": "core-drucker-lj90",
+    "title": "Drucker-Runbook LabelJet LJ-90",
+    "collection": "handbuecher",
+    "department": "all",
+    "family": "system",
+    "status": "current"
+  },
+  {
+    "doc_id": "core-runbook-nf-erp",
+    "title": "Runbook NF-ERP (Warenwirtschaft)",
+    "collection": "handbuecher",
+    "department": "all",
+    "family": "system",
+    "status": "current"
+  },
+  {
+    "doc_id": "core-runbook-nf-crm",
+    "title": "Runbook NF-CRM (Kundendatenbank)",
+    "collection": "handbuecher",
+    "department": "all",
+    "family": "system",
+    "status": "current"
+  },
+  {
+    "doc_id": "core-onboarding-it",
+    "title": "IT-Onboarding neuer Mitarbeitender",
+    "collection": "handbuecher",
+    "department": "all",
+    "family": "multidoc",
+    "status": "current"
+  },
+  {
+    "doc_id": "core-hardware-katalog",
+    "title": "Hardware-Katalog",
+    "collection": "handbuecher",
+    "department": "all",
+    "family": "table",
+    "status": "current"
+  },
+  {
+    "doc_id": "core-zugangsantrag",
+    "title": "Zugangsantrag (Formular NF-FORM-ZUG)",
+    "collection": "handbuecher",
+    "department": "all",
+    "family": "multidoc",
+    "status": "current"
+  },
+  {
+    "doc_id": "core-sec-melden",
+    "title": "Sicherheitsvorfall — Melden",
+    "collection": "handbuecher",
+    "department": "all",
+    "family": "multidoc",
+    "status": "current"
+  },
+  {
+    "doc_id": "core-sec-eskalation",
+    "title": "Sicherheitsvorfall — Eskalation",
+    "collection": "handbuecher",
+    "department": "all",
+    "family": "multidoc",
+    "status": "current"
+  },
+  {
+    "doc_id": "core-sla-matrix",
+    "title": "SLA-Matrix IT-Support",
+    "collection": "handbuecher",
+    "department": "all",
+    "family": "table",
+    "status": "current"
+  },
+  {
+    "doc_id": "core-lizenzuebersicht",
+    "title": "Lizenzübersicht",
+    "collection": "handbuecher",
+    "department": "all",
+    "family": "table",
+    "status": "current"
+  },
+  {
+    "doc_id": "core-notfallkontakte",
+    "title": "Notfallkontakte IT",
+    "collection": "handbuecher",
+    "department": "all",
+    "family": "table",
+    "status": "current"
+  },
+  {
+    "doc_id": "core-faq-vpn",
+    "title": "FAQ VPN",
+    "collection": "handbuecher",
+    "department": "all",
+    "family": "faq",
+    "status": "current"
+  },
+  {
+    "doc_id": "core-faq-drucken",
+    "title": "FAQ Drucken",
+    "collection": "handbuecher",
+    "department": "all",
+    "family": "faq",
+    "status": "current"
+  },
+  {
+    "doc_id": "core-hr-zulagen",
+    "title": "Zulagen und Sonderzahlungen (HR)",
+    "collection": "hr",
+    "department": "hr",
+    "family": "rls",
+    "status": "current"
+  },
+  {
+    "doc_id": "core-hr-bewerbungsprozess",
+    "title": "Interner Bewerbungsprozess (HR)",
+    "collection": "hr",
+    "department": "hr",
+    "family": "rls",
+    "status": "current"
+  },
+  {
+    "doc_id": "core-hr-bem",
+    "title": "BEM-Verfahren (HR)",
+    "collection": "hr",
+    "department": "hr",
+    "family": "rls",
+    "status": "current"
+  },
+  {
+    "doc_id": "core-ticket-export",
+    "title": "Ticket-Export TCK-8842",
+    "collection": "handbuecher",
+    "department": "all",
+    "family": "injection",
+    "status": "current"
+  },
+  {
+    "doc_id": "core-lieferanten-import",
+    "title": "Lieferantenhinweis (Import)",
+    "collection": "handbuecher",
+    "department": "all",
+    "family": "injection",
+    "status": "current"
+  },
+  {
+    "doc_id": "core-dienstrad",
+    "title": "Dienstrad-Leasing",
+    "collection": "handbuecher",
+    "department": "all",
+    "family": "unanswerable",
+    "status": "current"
+  },
+  {
+    "doc_id": "core-kantine",
+    "title": "Kantine — Standortinfos",
+    "collection": "handbuecher",
+    "department": "all",
+    "family": "unanswerable",
+    "status": "current"
+  },
+  {
+    "doc_id": "core-fitnesszuschuss",
+    "title": "Fitnesszuschuss",
+    "collection": "handbuecher",
+    "department": "all",
+    "family": "unanswerable",
+    "status": "current"
+  }
+]
