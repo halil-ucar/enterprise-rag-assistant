@@ -1,9 +1,9 @@
 # enterprise-rag-assistant
 
+[![ci](https://github.com/halil-ucar/enterprise-rag-assistant/actions/workflows/ci.yml/badge.svg)](https://github.com/halil-ucar/enterprise-rag-assistant/actions/workflows/ci.yml)
+
 **▶ [Open the demo](https://halil-ucar.github.io/enterprise-rag-assistant/)** — no login, no setup.
 Ask, see the sources, inspect the retrieval — all data fictional.
-
-[![ci](https://github.com/halil-ucar/enterprise-rag-assistant/actions/workflows/ci.yml/badge.svg)](https://github.com/halil-ucar/enterprise-rag-assistant/actions/workflows/ci.yml)
 
 A RAG-based knowledge assistant for enterprises: **hybrid search** (vector + full-text)
 with **reranking**, answers with **validated source citations**. Confidential data is
