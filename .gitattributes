@@ -1,0 +1,6 @@
+# GitHub language stats (linguist): docs/index.html is a build artifact —
+# scripts/build_demo.py bakes it from ui/index.html + ui/demo-mock.js. Mark it as
+# generated so the repo's language bar reflects the Python service behind the
+# project rather than one large generated file, and so GitHub collapses it in
+# diffs. ui/index.html is NOT marked: it is hand-written source and should count.
+docs/index.html linguist-generated=true
