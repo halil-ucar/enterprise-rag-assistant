@@ -590,7 +590,7 @@
     var docId = (body && body.doc_id) || "dok-" + ++docSeq;
     if (collection === "hr" && !canSeeHr(persona)) {
       jobs[jobId] = { status: "complete", result: { status: "empty", error: "forbidden" } };
-      return json({ job_id: jobId });
+      return { job_id: jobId };
     }
     var chunks = [];
     for (var i = 0; i < n; i++) {
@@ -602,7 +602,7 @@
     if (existing) { existing.chunks = chunks; existing.title = title; existing.collection = collection; }
     else docState.push({ doc_id: docId, title: title, collection: collection, updated_at: "2026-07-21", chunks: chunks });
     jobs[jobId] = { status: "complete", result: { status: existing ? "updated" : "created", chunks: n } };
-    return json({ job_id: jobId });
+    return { job_id: jobId };
   }
   function pollJob(jobId) {
     return jobs[jobId] || { status: "not_found" };
